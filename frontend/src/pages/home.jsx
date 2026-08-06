@@ -1,43 +1,39 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { getProducts } from "../services/productService";
-
 
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
-
+import Footer from "../components/Footer";
+import SearchBar from "../components/Searchbar";
 
 function Home() {
-    const [products, setProducts] = useState([]);
-    
-    useEffect(() => {
-        async function loadProducts(){
-            const data = await getProducts();
-            setProducts(data);
-        }
-        loadProducts();
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    async function loadProducts() {
+      const data = await getProducts();
+      setProducts(data);
+    }
+    loadProducts();
+  }, []);
 
-    },[]);
+  return (
+    <>
+      <Navbar />
 
-    return (
-        <>
+      <main>
+        {/* Search Bar */}
+        <section>
+          <SearchBar />
+        </section>
 
-            <Navbar />
+        <section>Categories</section>
 
-            <div className="p-8">
+        <section>Products</section>
+      </main>
 
-                <h1 className="text-4xl font-bold">
-                    Products
-                </h1>
-                
-                {products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-
-            </div>
-
-        </>
-    );
-
+      <Footer />
+    </>
+  );
 }
 export default Home;
