@@ -5,7 +5,8 @@ import { getProducts } from "../services/productService";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import ServiceSection from "../components/ServiceSection";
-import Categories from "../components/Categories";
+import HospitalSection from "../components/HospitalSection";
+import DoctorSection from "../components/DoctorSection";
 import Footer from "../components/Footer";
 
 
@@ -15,6 +16,8 @@ function Home() {
             <Navbar />
             <Hero />
             <ServiceSection />
+            <HospitalSection />
+            <DoctorSection />
             <main>
                 <h1>
                     Welcome to MedCare
