@@ -33,5 +33,3 @@ dist-ssr/
 # OS files
 Thumbs.db
 
-# CommonJS files
-cjs/
